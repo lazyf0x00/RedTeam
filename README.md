@@ -1,5 +1,6 @@
 # RedTeam
 Nmap
+
 nmap -sS -sV -A -O --script="*-vuln-*" --script-args=unsafe=1 <[IP]>
 
 nmap -sC -sV -A -p- --open -v -T5 --script vuln 
