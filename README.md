@@ -1,5 +1,6 @@
 # RedTeam
-Nmap
+                                                            Nmap
+=========================================================================
 
 nmap -sS -sV -A -O --script="*-vuln-*" --script-args=unsafe=1 <[IP]>
 
@@ -14,3 +15,14 @@ nmap -T4 -A -sV --script=vuln -Pn
 nmap -sV --script=default --script=vulscan/vulscan.nse IP
 
 nmap -Pn -sV -oX a.xml site.com; searchsploit --nmap a.xml
+
+
+
+                                                        Nikto
+
+nikto -h http://yourdomain.com -C all
+
+nikto -Tuning x 6 -h http://targetsite.com
+
+
+
